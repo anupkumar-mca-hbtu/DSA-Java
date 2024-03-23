@@ -15,6 +15,9 @@ public class SubArrayWithZeroSum {
         HashSet<Integer> hs= new HashSet<>();
         for(int i=0;i<n;i++) {
             preSum=preSum+arr[i];
+            if(hs.contains(preSum+arr[i])) {
+                return true;
+            }
             if(preSum==0) {
                 return true;
             }
